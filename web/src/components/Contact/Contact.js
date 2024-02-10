@@ -11,12 +11,26 @@ export default function Contact({ setoffcontact, refresh }) {
     para: ""
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(states);
 
+    try {
+      const response = await fetch('https://portfolio-iota-nine-53.vercel.app/email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(states),
+      });
 
-    
+      if (response.ok) {
+        console.log('Email envoyé avec succès');
+      } else {
+        console.error('Erreur lors de l\'envoi de l\'email');
+      }
+    } catch (error) {
+      console.error('Erreur lors de la requête:', error);
+    }
   };
 
   useEffect(() => {

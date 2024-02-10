@@ -4,12 +4,14 @@ const fs = require("fs")
 const inlineCss = require("inline-css")
 const hogan = require("hogan.js")
 require('dotenv').config();
+const cors = require("cors")
 
 
 const app = express();
 
 // LES MIDDLEWARES
 app.use(express.json());
+app.use(cors())
 
 app.listen(8080, () => {
     console.log('serveur lancé');
