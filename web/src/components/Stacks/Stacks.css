@@ -1,0 +1,131 @@
+.stacks__container {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: start;
+    gap: 1em;
+}
+.stacks__container_big {
+    position: relative;
+    z-index: 100;
+    margin-top: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.stacks__container_grid {
+    position: relative;
+    border: solid 1px rgba(255, 255, 255, 0.103);
+    background-image: url("../../assets/backgrounds/round.svg");
+    background-position: center;
+    background-size: contain;
+    height: 80%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em;
+    margin: 1em;
+    gap: 2em;
+    overflow: hidden;
+}
+.stacks__container_grid:after {
+    content: "";
+    inset: 0;
+    background-image: url("../../assets/noises/hhholographic.webp");
+    display: block;
+    position: absolute;
+    background-size: 300px;
+    mix-blend-mode: soft-light;
+    opacity: .01;
+}
+.stacks__container_grid_stack {
+    backdrop-filter: blur(2px);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .5em 2em;
+    width: 100%;
+    border-radius: .25em;
+    letter-spacing: .25em;
+    font-size: 1.5rem;
+    overflow:hidden;
+    border: rgba(245, 245, 245, 0.801) 1px solid;
+    z-index: 2;
+}
+.stack_subtitle {
+    font-size: 2rem;
+    font-weight: normal;
+}
+.stacks__container_big_title {
+    font-size: 8rem;
+    font-family: "cursive";
+    font-weight: normal;
+    margin-bottom: 10vh;
+    padding: 0 2rem;
+}
+
+.bulle {
+    position: absolute;
+    background-color: #a78bfa34;
+    opacity: 1;
+    border-radius: 999px;
+    width: 10px;
+    aspect-ratio: 1 / 1; 
+    transform: translate(-50%, -50%);
+    animation: anime_bulle 1s forwards;
+    z-index: -1;
+    pointer-events: none;
+    background-image: url("../../assets/noises/uuundulate.svg");
+}
+.point {
+    position: fixed;
+    display: block;
+    z-index: 999;
+    opacity: 1;
+    pointer-events: none;
+    font-size: 1rem;
+    animation: anime_point 1s forwards;
+    color: #a78bfa;
+}
+
+@keyframes anime_bulle {
+    to {
+        width: 750px;
+        opacity: 0; 
+    }
+}
+@keyframes anime_point{
+    to {
+        opacity: 0; 
+        transform: translateY(-40px) scale(1.5);
+    }
+}
+
+@media (max-width: 1220px) {
+    .stacks__container {
+        flex-direction: column;
+    align-items: center;
+
+    }
+}
+@media (max-width: 477px) {
+    .stacks__container_grid_stack {
+        font-size: 1.25rem;
+    }
+    .stacks__container_grid {
+        border: none;
+        width: 100%;
+        gap: 1em;
+        padding: 1em;
+    }
+    .stacks__container_big_title {
+        font-size: 6rem;
+    }
+}

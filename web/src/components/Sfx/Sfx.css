@@ -1,0 +1,39 @@
+.sfx_container {
+    position: fixed;
+    right: 1.75em;
+    top: 1.5em;
+    color: rgba(245, 245, 245, 0.767);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    
+
+
+}
+.sfx_container_omocat {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    transform: translateX(50%);
+    right: 50%;
+    top: 60%;
+    color: rgba(245, 245, 245, 0.767);
+    z-index: 999999;
+    width: 80px;
+
+}
+.imamama {
+    object-fit: contain;
+}
+.kel_svg {
+    background-color: rgba(0, 0, 0, 0.527);
+    border: 1px #a78bfa8f solid;
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+    border-radius: 4px;
+    cursor: pointer;
+    padding: .5em;
+}

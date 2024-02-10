@@ -1,0 +1,35 @@
+.alert_container {
+display: flex;
+position: fixed;
+padding: 1em 2em;
+width: fit-content;
+top: 1em;
+z-index: 999999;
+left: 50%;
+transform: translateX(-50%);
+background-color: rgba(0, 0, 0, 0.925);
+border: 1px #a78bfa8f solid;
+-webkit-backdrop-filter: blur(3px);
+backdrop-filter: blur(3px);
+color: whitesmoke;
+font-family: normal;
+}
+.underlined {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #ef8cfa;
+    background-image: linear-gradient(90deg, #ef8cfa 0%, #a78bfa 100%);
+    bottom: -1em;
+    left: 0;
+    border-radius: 99px;
+}
+.underlined::before {
+    content: "";
+    border-radius: 99px;
+    position: fixed;
+    width: 100%;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.151);
+    left: 0;
+}
