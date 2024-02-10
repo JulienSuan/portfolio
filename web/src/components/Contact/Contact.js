@@ -15,18 +15,17 @@ const [states, setstates] = useState({
 const handleSubmit = async (e) => {
   e.preventDefault();
 
+  const json = JSON.stringify(states)
+
+  console.log(json)
+
   try {
     const response = await fetch('https://portfolio-iota-nine-53.vercel.app/email', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({
-        nom: states.nom,
-        prénom: states.prénom,
-        société: states.société,
-        para: states.para
-      }),
+      body: json,
     });
 
     console.log(response)
@@ -86,8 +85,8 @@ const handleSubmit = async (e) => {
           <label htmlFor="message">Message</label>
           <textarea
             name="message"
-            value={states.message}
-            onChange={(e) => setstates({ ...states, message: e.target.value })}
+            value={states.para}
+            onChange={(e) => setstates({ ...states, para: e.target.value })}
             id="message"
             cols="30"
             rows="10"
