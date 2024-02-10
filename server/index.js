@@ -35,12 +35,13 @@ app.get("/", (req, res) => {
     res.send("boo !")
 })
 
-app.post('/email', async (req, res) => {
-    console.log(req.body)
 
+app.post('/email', async (req, res) => {
+    console.log(req.body);
+  
     try {
       const { para, nom, prénom, société } = req.body;
-      console.log(req.body)
+      console.log(req.body);
   
       if (para && nom && prénom ) {
         const file = fs.readFileSync(__dirname + '/mailTemplate/template.html');

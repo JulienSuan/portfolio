@@ -4,36 +4,43 @@ import "./Contact.css";
 export default function Contact({ setoffcontact, refresh }) {
 
   const containeeer = useRef(null);
-  const [states, setstates] = useState({
-    nom: "",
-    prénom: "",
-    société: "",  
-    para: ""
-  });
+  
+const [states, setstates] = useState({
+  nom: "",
+  prénom: "",
+  société: "",  
+  para: ""
+});
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    try {
-      const response = await fetch('https://portfolio-iota-nine-53.vercel.app/email', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(states),
-      });
+  try {
+    const response = await fetch('https://portfolio-iota-nine-53.vercel.app/email', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        nom: states.nom,
+        prénom: states.prénom,
+        société: states.société,
+        para: states.para
+      }),
+    });
 
-      console.log(response)
+    console.log(response)
 
-      if (response.ok) {
-        console.log('Email envoyé avec succès');
-      } else {
-        console.error('Erreur lors de l\'envoi de l\'email');
-      }
-    } catch (error) {
-      console.error('Erreur lors de la requête:', error);
+    if (response.ok) {
+      console.log('Email envoyé avec succès');
+    } else {
+      console.error('Erreur lors de l\'envoi de l\'email');
     }
-  };
+  } catch (error) {
+    console.error('Erreur lors de la requête:', error);
+  }
+};
+
 
   useEffect(() => {
     setoffcontact(containeeer.current.offsetTop);
