@@ -43,7 +43,7 @@ app.post("/email", async(req, res) => {
 
     if (para, nom, prénom) {
         
-        const file = fs.readFileSync(__dirname +"./mailTemplate/template.html")
+        const file = fs.readFileSync(__dirname +"/mailTemplate/template.html")
         const filecss = await inlineCss(file.toString(), {url: "file://" + __dirname + "/mailTemplate/"})
         const templateCompiled = hogan.compile(filecss)
         const templateRender = templateCompiled.render({para, nom, prénom, société})
