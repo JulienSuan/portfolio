@@ -7,7 +7,7 @@ export default function Contact({ setoffcontact, refresh }) {
   const [states, setstates] = useState({
     nom: "",
     prénom: "",
-    société: "",
+    société: "",  
     para: ""
   });
 
@@ -22,6 +22,8 @@ export default function Contact({ setoffcontact, refresh }) {
         },
         body: JSON.stringify(states),
       });
+
+      console.log(response)
 
       if (response.ok) {
         console.log('Email envoyé avec succès');
