@@ -5,6 +5,7 @@ import sound from "../../assets/sfx/alert.ogg"
 import sound2 from "../../assets/sfx/SE_lightbulb.ogg"
 import { motion, useTransform } from 'framer-motion';
 import { useScroll } from 'framer-motion';
+import { useMotionValueEvent } from 'framer-motion';
 
 const soundi = new Audio(sound)
 soundi.volume = .1
@@ -43,8 +44,8 @@ const activeAlert = () => {
 
 
 const handleSubmit = useCallback(async (e) => {
+  
   e.preventDefault();
-
   function ValidateEmail(mail) {
     if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)) {
       return true;
@@ -94,13 +95,15 @@ const handleSubmit = useCallback(async (e) => {
   }
 }, [states, isAlert, activeSound]);
 
+const [isHere, setisHere] = useState(false);
+
 
 const scroll1 = useScroll({
   target: containeeer,
   offset: ["start end", "end start"],
 })
 
-const translate = useTransform(scroll1.scrollYProgress, [0, .5], [-300, -400])
+const translate = useTransform(scroll1.scrollYProgress, [0, .5], [-100, 0])
 
 
 const [isFocused, setisFocused] = useState(false);
@@ -111,9 +114,17 @@ const [isFocused3, setisFocused3] = useState(false);
     setoffcontact(containeeer.current.offsetTop);
   }, [containeeer, refresh]);
 
+  useMotionValueEvent(translate, "change", (latest) => {
+    if (latest > .5) {
+            setisHere(true)  
+    } else {
+            setisHere(false) 
+    }
+  })
+
   return (
     <div ref={containeeer} className='contact_container'>
-      <motion.h2  style={{position:"absolute", y: translate}} className='stacks__container_big_title'>Contact</motion.h2>
+      <motion.h2 initial={{y: 0}}  style={{ y:translate, marginBottom: "0"}} className='stacks__container_big_title'>Contact</motion.h2>
       {isAlert && <Alert message={"Vous devez rentrer un mail valide"}></Alert>}
       {alrt &&  <Alert message={"Le mail a été copié dans votre presse-papiers"}></Alert>}
       <form className='formuuu' onSubmit={(e) => handleSubmit(e)}>
@@ -179,7 +190,7 @@ const [isFocused3, setisFocused3] = useState(false);
         </div>
 
 
-        <button disabled={states.email && states.nom && states.para ? false : true} style={states.email && states.nom && states.para ? {color: "whitesmoke", borderColor: "#a78bfaf0" } : null} type="submit">Submit</button>
+        <button disabled={states.email && states.nom && states.para ? false : true} style={states.email && states.nom && states.para ? {color: "whitesmoke", borderColor: "#a78bfaf0" } : null} type="submit">Envoyez</button>
       </form>
     </div>
   );

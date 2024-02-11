@@ -1,12 +1,13 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import "./Navigation.css"
 import { SiDiscord } from "react-icons/si";
 import { FaDownload } from "react-icons/fa6";
-import {motion, AnimatePresence} from "framer-motion"
+import {motion, AnimatePresence, useMotionValueEvent, useScroll} from "framer-motion"
 
 export default function Navigation({isOpen, setOpen, x, y, setCursorVariant, setCursorVariant2, activeSound}) {
 
   const ref = useRef(null)
+  const [isHere, setisHere] = useState(true);
   const variants = {
     open: { width: 500, height: 260, borderRadius: ".5em"},
     closed: { width: 80,  height: 80, borderRadius: "5em"},
@@ -19,8 +20,25 @@ export default function Navigation({isOpen, setOpen, x, y, setCursorVariant, set
    
   }, [isOpen]);
 
+  
+  const {scrollYProgress, scrollY} = useScroll({
+    target: window.body,
+    offset: ["start start", "end end"]
+})
+
+
+useMotionValueEvent(scrollYProgress, "change", (latest) => {
+   if (latest > .97) {
+    setisHere(false)
+   } else {
+    setisHere(true)
+
+   }
+  })
+
 
   return (
+    isHere && 
     <>
       <motion.div    layout animate={!isOpen ? "open" : "closed"}
       variants={variants} transition={{duration: .15 }}  onMouseDown={() => {setCursorVariant("tap") ; setCursorVariant2("tap")}} 

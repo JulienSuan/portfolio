@@ -6,6 +6,7 @@
     align-items: center;
     margin-top: 30dvh;
     position: relative;
+    flex-direction: column;
 }
 .cont_contact_label {
     display: flex;
