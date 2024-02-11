@@ -7,8 +7,7 @@ export default function Contact({ setoffcontact, refresh }) {
   
 const [states, setstates] = useState({
   nom: "",
-  prénom: "",
-  société: "",  
+  email: "",  
   para: ""
 });
 
@@ -49,35 +48,24 @@ const handleSubmit = async (e) => {
     <div ref={containeeer} className='contact_container'>
       <form onSubmit={(e) => handleSubmit(e)}>
         <div>
-          <label htmlFor="lastname">Nom de famille</label>
+          <label htmlFor="name">Nom</label>
           <input
             type="text"
             value={states.nom}
             onChange={(e) => setstates({ ...states, nom: e.target.value })}
-            id="lastname"
-            name="lastname"
+            id="name"
+            name="name"
           />
         </div>
 
         <div>
-          <label htmlFor="firstname">Prénom</label>
+          <label htmlFor="Email">Email</label>
           <input
             type="text"
-            value={states.prénom}
-            onChange={(e) => setstates({ ...states, prénom: e.target.value })}
-            id="firstname"
-            name="firstname"
-          />
-        </div>
-
-        <div>
-          <label htmlFor="société">Société</label>
-          <input
-            type="text"
-            value={states.société}
-            onChange={(e) => setstates({ ...states, société: e.target.value })}
-            id="société"
-            name="société"
+            value={states.email}
+            onChange={(e) => setstates({ ...states, email: e.target.value })}
+            id="Email"
+            name="Email"
           />
         </div>
 

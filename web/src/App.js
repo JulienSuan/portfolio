@@ -138,7 +138,8 @@ function App() {
       y: mouseYPosition -50,
       transition: {
         type: "spring",
-        mass: 0.6
+        mass: 0.3,
+        stiffness: 100
       }
     },
     default2: {
@@ -248,7 +249,7 @@ function App() {
       <Stacks activeSound={activeSound} setOff={setOff} off={off} ref={refou} startTimer={startTimer} closeTimer={closeTimer} setPoints={setPoints} points={points} x={mouseXPosition} y={mouseYPosition}></Stacks>
 
     <Moi activeSound={activeSound} setOffmoi={setOffmoi} startTimer={startTimer} closeTimer={closeTimer} x={mouseXPosition} y={mouseYPosition} setCursorVariant={setCursorVariant} setCursorVariant2={setCursorVariant2}></Moi>
-    <Projets setomorioff={setomorioff}  counti={count}  setcount={setcount}></Projets>
+    <Projets setCursorVariant={setCursorVariant} setCursorVariant2={setCursorVariant2} setomorioff={setomorioff}  counti={count}  setcount={setcount}></Projets>
     <Formulaire setrefresh={setrefresh}  activeSound={activeSound} setoffvous={setoffvous} counti={count} setCursorVariant={setCursorVariant} setCursorVariant2={setCursorVariant2} isOpen={isOpen}  setOpen={setOpen} openedMe={openedMe} timeMoi={timeMoi} startTimer={startTimer} closeTimer={closeTimer} timeLui={timeLui} timeland={timeland} points={points}></Formulaire>
     <Contact refresh={refresh} setoffcontact={setoffcontact}></Contact>
       </motion.div>

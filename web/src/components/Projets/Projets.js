@@ -9,7 +9,7 @@ import sound from "../../assets/sfx/GEN_Poke_reverse.mp3"
 const sfxOpen = new Audio(sound)
 sfxOpen.volume = .1
 
-export default function Projets({setcount, counti, setomorioff}) {
+export default function Projets({setcount, counti, setomorioff, setCursorVariant, setCursorVariant2}) {
 
 
         const refomori = useRef(null)
@@ -104,14 +104,22 @@ export default function Projets({setcount, counti, setomorioff}) {
                 }
               })
 
-
   return (
     <div ref={refomori} className='projets_container'>
 
          <motion.div  layout ref={refa3} className="projet_cont">
         <motion.h2  layout className='stacks__container_big_title' style={{position: "relative", top: 0}}>Mes Projets</motion.h2>
-                <motion.div style={{y: translate4}} onClick={() => setisvisited(true)}  whileHover={{scale: 1.02}} whileTap={{scale: 0.95}} layout className="projet_cont_image_container">
-                        <motion.div style={{backgroundImage: `url(${moon})`}} className="projet_cont_image">
+                <motion.div onMouseDown={() => {setCursorVariant("tap") ; setCursorVariant2("tap")}} 
+                    onMouseUp={() => {setCursorVariant("hover") ; setCursorVariant2("hover")}} onMouseEnter={() => {
+        setCursorVariant("hover")
+        setCursorVariant2("hover")
+       
+      }} onMouseLeave={() => {
+        setCursorVariant("default")
+        setCursorVariant2("default2")
+        
+      }}   style={{y: translate4}} onClick={() => setisvisited(true)}   layout className="projet_cont_image_container">
+                        <motion.div initial={{ backgroundSize: "105%"}} transition={{duration:.25, ease: "backOut"}} whileHover={{scale: .95, backgroundSize: "115%"}} whileTap={{scale: 0.92}}style={{backgroundImage: `url(${moon})`}} className="projet_cont_image">
                         </motion.div>
                         <motion.p style={{y: translate5}} className='ILoveOmori'>Là où tout à commencé</motion.p>
                         <motion.p style={{y: translate5}} className='ILoveOmori'>2021</motion.p>
@@ -122,8 +130,17 @@ Ceci est mon tout premier site, oui. <br /><br />Qu'il ne soit pas terminé, pas
         </AnimatePresence>
             </motion.div>
             <motion.div  ref={refa} className="projet_cont">
-                <motion.div style={{y: translate2}} onClick={() => setisvisited2(true)}  whileHover={{scale: 1.02}} whileTap={{scale: 0.95}} layout className="projet_cont_image_container">
-                        <motion.div  style={{backgroundImage: `url(${allforone})`}} className="projet_cont_image">
+                <motion.div onMouseDown={() => {setCursorVariant("tap") ; setCursorVariant2("tap")}} 
+                    onMouseUp={() => {setCursorVariant("hover") ; setCursorVariant2("hover")}} onMouseEnter={() => {
+        setCursorVariant("hover")
+        setCursorVariant2("hover")
+       
+      }} onMouseLeave={() => {
+        setCursorVariant("default")
+        setCursorVariant2("default2")
+        
+      }}  style={{y: translate2}} onClick={() => setisvisited2(true)}  layout className="projet_cont_image_container">
+                        <motion.div  initial={{ backgroundSize: "105%"}} transition={{duration:.25, ease: "backOut"}} whileHover={{scale: .95, backgroundSize: "115%"}} whileTap={{scale: 0.92}} style={{backgroundImage: `url(${allforone})`}} className="projet_cont_image">
                         </motion.div>
                         <motion.p style={{x: translate}} className='ILoveOmori'>Overwatch All For One</motion.p>
                         <motion.p style={{x: translate}} className='ILoveOmori'>2022</motion.p>
@@ -135,8 +152,17 @@ Ceci est mon tout premier site, oui. <br /><br />Qu'il ne soit pas terminé, pas
         </AnimatePresence>
             </motion.div>
             <motion.div ref={refa2}  className="projet_cont">
-                <motion.div style={{y: translate3}} onClick={() => setisvisited3(true)} whileHover={{scale: 1.02}} whileTap={{scale: 0.95}} layout  className="projet_cont_image_container">
-                        <motion.div  style={{backgroundImage: `url(${brad})`}}  className="projet_cont_image">
+                <motion.div onMouseDown={() => {setCursorVariant("tap") ; setCursorVariant2("tap")}} 
+                    onMouseUp={() => {setCursorVariant("hover") ; setCursorVariant2("hover")}} onMouseEnter={() => {
+        setCursorVariant("hover")
+        setCursorVariant2("hover")
+       
+      }} onMouseLeave={() => {
+        setCursorVariant("default")
+        setCursorVariant2("default2")
+        
+      }} style={{y: translate3}} onClick={() => setisvisited3(true)}  layout  className="projet_cont_image_container">
+                        <motion.div initial={{ backgroundSize: "105%"}} transition={{duration:.25, ease: "backOut"}} whileHover={{scale: .95, backgroundSize: "115%"}} whileTap={{scale: 0.92}} style={{backgroundImage: `url(${brad})`}}  className="projet_cont_image">
                         </motion.div>
                         <p className='ILoveOmori'>Le Domaine Skincare</p>
                         <p className='ILoveOmori'>2023</p>
