@@ -57,17 +57,17 @@ export default function CardPoints({stats, setCursorVariant, setCursorVariant2, 
           <p>Au-dessus de 300 points ?! Pas mal du tout ! Ton intérêt est évident, et ça me fais chaud au cœur. On peut certainement trouver des choses à faire ensemble. Alors, envoie-moi un message quand tu seras prêt à échanger tes idées ! 😁</p>
         )
       }
-      if (stats >= 250) {
+      if (stats >= 200) {
         return (
-          <p>Au-dessus de 250 points ?! C'est un bon score ! Tu as pris le temps de naviguer dans mon portfolio, et ça compte beaucoup. Au moins, tu es au-dessus de la moyenne ! 🤭 L'inverse m'aurait blessé 😐 En tout cas, cela démontre que tu as un peu d'intérêt pour moi. Alors, viens tout de suite me contacter maintenant que tu es là !</p>
+          <p>Au-dessus de 200 points ?! C'est un bon score ! Tu as pris le temps de naviguer dans mon portfolio, et ça compte beaucoup. Au moins, tu es proche de la moyenne ! 🤭 L'inverse m'aurait blessé 😐 En tout cas, cela démontre que tu as un peu d'intérêt pour moi. Alors, viens tout de suite me contacter maintenant que tu es là !</p>
         )
       }
-      if (stats >= 150) {
+      if (stats >= 100) {
         return (
-          <p>Mmmmmh ... Au-dessus de 150 points 😐. Serais-tu quelqu'un de pressé dans la vie ? Ou bien ne trouves-tu pas mon portfolio si intéressant ? 😥 J'aurais vraiment aimé pouvoir piquer davantage ta curiosité, mais je suis certain que nous pouvons encore rattraper ça ensemble autour d'un verre. Alors, n'hésite quand même pas à venir me contacter !</p>
+          <p>Mmmmmh ... Au-dessus de 100 points seulement 😐. Serais-tu quelqu'un de pressé dans la vie ? Ou bien ne trouves-tu pas mon portfolio si intéressant ? 😥 J'aurais vraiment aimé pouvoir piquer davantage ta curiosité, mais je suis certain que nous pouvons encore rattraper ça ensemble autour d'un verre. Alors, n'hésite quand même pas à venir me contacter !</p>
         )
       }
-      if (stats >= 50) {
+      if (stats >= 0) {
         return (     
           <p>Je n'ose même pas citer ton score... Alors comme ça, mon portfolio ne t'attire pas l'œil ? 😯 Me voilà maintenant déboussolé, je pensais bien faire avec ce magnifique portfolio et voilà qu'on y passe à peine 30 secondes 😓 Malgré cela, je suis certain de ta bonne foi, alors n'hésite pas à me contacter, c'était peut-être une erreur 😶</p>
         )

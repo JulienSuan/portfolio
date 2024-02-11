@@ -251,7 +251,8 @@ function App() {
     <Moi activeSound={activeSound} setOffmoi={setOffmoi} startTimer={startTimer} closeTimer={closeTimer} x={mouseXPosition} y={mouseYPosition} setCursorVariant={setCursorVariant} setCursorVariant2={setCursorVariant2}></Moi>
     <Projets setCursorVariant={setCursorVariant} setCursorVariant2={setCursorVariant2} setomorioff={setomorioff}  counti={count}  setcount={setcount}></Projets>
     <Formulaire setrefresh={setrefresh}  activeSound={activeSound} setoffvous={setoffvous} counti={count} setCursorVariant={setCursorVariant} setCursorVariant2={setCursorVariant2} isOpen={isOpen}  setOpen={setOpen} openedMe={openedMe} timeMoi={timeMoi} startTimer={startTimer} closeTimer={closeTimer} timeLui={timeLui} timeland={timeland} points={points}></Formulaire>
-    <Contact refresh={refresh} setoffcontact={setoffcontact}></Contact>
+    
+    <Contact setCursorVariant={setCursorVariant} setCursorVariant2={setCursorVariant2} activeSound={activeSound} refresh={refresh} setoffcontact={setoffcontact}></Contact>
       </motion.div>
     {/* </LayoutGroup> */}
     <Test></Test>
