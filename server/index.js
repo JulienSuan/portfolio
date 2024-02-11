@@ -43,14 +43,14 @@ app.post('/email', async (req, res) => {
       const { para, email, nom } = req.body;
       console.log(req.body);
   
-      if (para && nom && prénom ) {
+      if (para && nom && email) {
         const file = fs.readFileSync(__dirname + '/mailTemplate/template.html');
         const filecss = await inlineCss(file.toString(), { url: 'file://' + __dirname + '/mailTemplate/' });
         const templateCompiled = hogan.compile(filecss);
         const templateRender = templateCompiled.render({ para, email, nom });
   
         const mailOptions = {
-          from: 'votre_email@gmail.com',
+          from: email,
           to: 'jbigot.dev@gmail.com',
           subject: 'Contact Portfolio',
           html: templateRender
