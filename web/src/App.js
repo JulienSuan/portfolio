@@ -271,7 +271,7 @@ function App() {
     <Contact setCursorVariant={setCursorVariant} setCursorVariant2={setCursorVariant2} activeSound={activeSound} refresh={refresh} setoffcontact={setoffcontact}></Contact>
       </motion.div>
     {/* </LayoutGroup> */}
-    {!isPhone && <Test></Test>}
+    <Test></Test>
     <p className="GoodForHealthBadForImagination">
      Portfolio fait avec 💜 par moi même
     </p>

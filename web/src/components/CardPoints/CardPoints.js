@@ -3,7 +3,7 @@ import "./CardPoints.css";
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLenis } from '@studio-freight/react-lenis';
 
-export default function CardPoints({stats, setCursorVariant, setCursorVariant2, children, offcontact }) {
+function CardPoints({stats, setCursorVariant, setCursorVariant2, children, offcontact }) {
   const test = useLenis()
 
     const [chooseMessage, setChooseMessage] = useState(0);
@@ -108,3 +108,6 @@ export default function CardPoints({stats, setCursorVariant, setCursorVariant2, 
     </AnimatePresence>
   );
 }
+
+
+export default React.memo(CardPoints)

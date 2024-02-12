@@ -3,7 +3,7 @@ import useMouse from '@react-hook/mouse-position'
 import { motion } from 'framer-motion';
 import "./Cursor.css"
 
-export default function Cursor({transition, variants, cursorVariant}) {
+function Cursor({transition, variants, cursorVariant}) {
 
 
   return (
@@ -12,3 +12,7 @@ export default function Cursor({transition, variants, cursorVariant}) {
     </motion.div>
   )
 }
+
+
+
+export default React.memo(Cursor)

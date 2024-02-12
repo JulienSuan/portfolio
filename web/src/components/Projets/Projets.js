@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 
 const sfxOpen = new Audio(sound)
 sfxOpen.volume = .1
-export default function Projets({setcount, counti, setomorioff, setCursorVariant, setCursorVariant2}) {
+function Projets({setcount, counti, setomorioff, setCursorVariant, setCursorVariant2}) {
 
 
        
@@ -188,3 +188,6 @@ Ceci est mon tout premier site, oui. <br /><br />Qu'il ne soit pas terminé, pas
     </div>
   )
 }
+
+
+export default React.memo(Projets)

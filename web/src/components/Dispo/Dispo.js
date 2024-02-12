@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react'
 import "./Dispo.css"
 import {useScroll,useMotionValueEvent, useAnimation, motion } from "framer-motion"
 
-export default function Dispo() {
+function Dispo() {
     
     const Dispo = useRef(null)
     const animationControls = useAnimation();
@@ -35,3 +35,6 @@ export default function Dispo() {
     </motion.div>
   )
 }
+
+
+export default React.memo(Dispo)

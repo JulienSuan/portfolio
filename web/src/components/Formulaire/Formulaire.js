@@ -214,5 +214,6 @@ import CardPoints from '../CardPoints/CardPoints';
   );
 });
 
-export default Formulaire;
+export default React.memo(Formulaire)
+
 

@@ -7,7 +7,7 @@ import sound from "../../assets/sfx/BA_download_attack.ogg"
 const sfxOpen = new Audio(sound)
 sfxOpen.volume = .05
 
-export default forwardRef(function Stacks({x,y,activeSound, setOff, setPoints, startTimer, closeTimer,points}, ref) {
+const Stacks = forwardRef(function Stacks({x,y,activeSound, setOff, setPoints, startTimer, closeTimer,points}, ref) {
 
 
   // const [ishere, setishere] = useState(false);
@@ -304,3 +304,5 @@ export default forwardRef(function Stacks({x,y,activeSound, setOff, setPoints, s
     </motion.div>
 } 
 )
+
+export default React.memo(Stacks)

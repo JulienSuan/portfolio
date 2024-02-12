@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import sound from "../../assets/sfx/se_plop copy.ogg"
 
 
-export default function Active({setactiveSound,activeSound,  setheChoosed, setCursorVariant, setCursorVariant2, setoveroui, setovernon}) {
+function Active({setactiveSound,activeSound,  setheChoosed, setCursorVariant, setCursorVariant2, setoveroui, setovernon}) {
 
 
     
@@ -41,3 +41,6 @@ export default function Active({setactiveSound,activeSound,  setheChoosed, setCu
     </motion.div>
   )
 }
+
+
+export default React.memo(Active)

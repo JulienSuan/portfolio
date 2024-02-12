@@ -23,4 +23,4 @@ const Alert = ({message}) => {
   );
 }
 
-export default Alert;
+export default React.memo(Alert)

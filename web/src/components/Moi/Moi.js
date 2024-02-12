@@ -8,7 +8,7 @@ import sound from "../../assets/sfx/SE_lightbulb.ogg"
 import { useParams } from 'react-router-dom';
 
 
-export default function Moi({x, y,setOffmoi,activeSound, setCursorVariant, setCursorVariant2, startTimer, closeTimer}) {
+function Moi({x, y,setOffmoi,activeSound, setCursorVariant, setCursorVariant2, startTimer, closeTimer}) {
 
   const {ninja} = useParams()
 
@@ -99,3 +99,6 @@ export default function Moi({x, y,setOffmoi,activeSound, setCursorVariant, setCu
         </>
   )
 }
+
+
+export default React.memo(Moi)

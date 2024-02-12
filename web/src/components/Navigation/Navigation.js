@@ -4,7 +4,7 @@ import { SiDiscord } from "react-icons/si";
 import { FaDownload } from "react-icons/fa6";
 import {motion, AnimatePresence, useMotionValueEvent, useScroll} from "framer-motion"
 
-export default function Navigation({isOpen, setOpen, x, y, setCursorVariant, setCursorVariant2, activeSound}) {
+function Navigation({isOpen, setOpen, x, y, setCursorVariant, setCursorVariant2, activeSound}) {
 
   const ref = useRef(null)
   const [isHere, setisHere] = useState(true);
@@ -69,3 +69,7 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
         </AnimatePresence>
   )
 }
+
+
+export default React.memo(Navigation)
+

@@ -19,7 +19,7 @@ audio3.volume = .05
 
 const soundTab = [audio1, audio2, audio3]
 
-export default function Nav({off,offvous,refresh, offcontact, offmoi, setCursorVariant, setCursorVariant2, omorioff, activeSound}) {
+function Nav({off,offvous,refresh, offcontact, offmoi, setCursorVariant, setCursorVariant2, omorioff, activeSound}) {
 
 
     const [pourcExp, setpourcExp] = useState(0);
@@ -169,3 +169,6 @@ export default function Nav({off,offvous,refresh, offcontact, offmoi, setCursorV
     </>
   )
 }
+
+
+export default React.memo(Nav)
