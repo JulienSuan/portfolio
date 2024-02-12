@@ -78,7 +78,7 @@ function Moi({x, y,setOffmoi,activeSound, setCursorVariant, setCursorVariant2, s
         }}  style={{letterSpacing: 1.5}}  onMouseDown={() => {setCursorVariant("tap") ; setCursorVariant2("tap")}} 
         onMouseUp={() => {setCursorVariant("hover") ; setCursorVariant2("hover")}} onClick={() => activeAlert()} className='pimped uuunder'>jbigot.dev@gmail.com</span>.
         </motion.p> : 
-         <motion.p style={{y: translate}}  className='moi_para'>
+         <motion.p  className='moi_para'>
 
         Bonjour tout le monde (TLM) Ninja ! Oui, ce portfolio est pour vous 💜. Normalement, c'est la partie où je me présente sérieusement pour les "autres". Mais vous ! Vous êtes si différent, si unique, que vous méritez une page dédiée dans toute votre splendeur ✨<br /><br />
         Oui, je suis tombé amoureux de votre agence... Tout me correspond de A à Z 😢 S'il vous plaît, faites de moi votre Genin ! Je suis un petit Breton qui a toujours rêvé d'habiter dans un pays froid... Le Canada est une destination rêvée pour mon futur ! <br /><br />
