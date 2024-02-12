@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 
 const sfxOpen = new Audio(sound)
 sfxOpen.volume = .1
-function Projets({setcount, counti, setomorioff, setCursorVariant, setCursorVariant2}) {
+function Projets({setcount,isPhone , counti, setomorioff, setCursorVariant, setCursorVariant2}) {
 
 
        
@@ -120,16 +120,16 @@ function Projets({setcount, counti, setomorioff, setCursorVariant, setCursorVari
         setCursorVariant("default")
         setCursorVariant2("default2")
         
-      }}   style={{y: translate4}} onClick={() => setisvisited(true)}   layout className="projet_cont_image_container">
+      }}   style={!isPhone  && {y: translate4}} onClick={() => setisvisited(true)}   layout className="projet_cont_image_container">
        <Link to={"https://juliensuan.github.io/Moonlighter/"} target='blank'>
                         <motion.div initial={{ backgroundSize: "105%"}} transition={{duration:.25, ease: "backOut"}} whileHover={{scale: .95, backgroundSize: "115%"}} whileTap={{scale: 0.92}}style={{backgroundImage: `url(${moon})`}} className="projet_cont_image">
                         </motion.div>
        </Link>
-                        <motion.p style={{y: translate5}} className='ILoveOmori'>Là où tout à commencé</motion.p>
-                        <motion.p style={{y: translate5}} className='ILoveOmori'>2021</motion.p>
+                        <motion.p style={!isPhone  && {y: translate5}} className='ILoveOmori'>Là où tout à commencé</motion.p>
+                        <motion.p style={!isPhone  && {y: translate5}} className='ILoveOmori'>2021</motion.p>
                 </motion.div>
         <AnimatePresence>
-                {isHere3 &&  <motion.p  style={{y: translate6}} key="modal3" layout transition={{duration: .5}} initial={{opacity: 0, y: 0}} animate={{opacity: .75, y: 0}} exit={{opacity: 0}} className='projet_cont_para moi_para'>
+                {isHere3 &&  <motion.p  style={!isPhone  && {y: translate6}} key="modal3" layout transition={{duration: .5}} initial={{opacity: 0, y: 0}} animate={{opacity: .75, y: 0}} exit={{opacity: 0}} className='projet_cont_para moi_para'>
 Ceci est mon tout premier site, oui. <br /><br />Qu'il ne soit pas terminé, pas très beau, que la vidéo en arrière-plan se lance une fois sur dix. <br /><br />Il reste tout de même mon tout premier-né, alors malgré tous ses défauts visibles et son apparence un peu funky, il me rappelle d'où je viens.<br /><br /></motion.p>}
         </AnimatePresence>
             </motion.div>
@@ -143,7 +143,7 @@ Ceci est mon tout premier site, oui. <br /><br />Qu'il ne soit pas terminé, pas
         setCursorVariant("default")
         setCursorVariant2("default2")
         
-      }}  style={{y: translate2}} onClick={() => setisvisited2(true)}  layout className="projet_cont_image_container">
+      }}  style={!isPhone  && {y: translate2}} onClick={() => setisvisited2(true)}  layout className="projet_cont_image_container">
        <Link to={"https://www.playallforone.com/"} target='blank'>
 
                         <motion.div  initial={{ backgroundSize: "105%"}} transition={{duration:.25, ease: "backOut"}} whileHover={{scale: .95, backgroundSize: "115%"}} whileTap={{scale: 0.92}} style={{backgroundImage: `url(${allforone})`}} className="projet_cont_image">
@@ -151,8 +151,8 @@ Ceci est mon tout premier site, oui. <br /><br />Qu'il ne soit pas terminé, pas
 
        </Link>
 
-                        <motion.p style={{x: translate}} className='ILoveOmori'>Overwatch All For One</motion.p>
-                        <motion.p style={{x: translate}} className='ILoveOmori'>2022</motion.p>
+                        <motion.p style={!isPhone  && {x: translate}} className='ILoveOmori'>Overwatch All For One</motion.p>
+                        <motion.p style={!isPhone  && {x: translate}} className='ILoveOmori'>2022</motion.p>
 
                 </motion.div>
         <AnimatePresence>
@@ -170,7 +170,7 @@ Ceci est mon tout premier site, oui. <br /><br />Qu'il ne soit pas terminé, pas
         setCursorVariant("default")
         setCursorVariant2("default2")
         
-      }} style={{y: translate3}} onClick={() => setisvisited3(true)}  layout  className="projet_cont_image_container">
+      }} style={!isPhone  && {y: translate3}} onClick={() => setisvisited3(true)}  layout  className="projet_cont_image_container">
           <Link target='blank' to={"https://le-domaine.com/?gad_source=1&gclid=CjwKCAiA_aGuBhACEiwAly57MUkL2UzZdunkT1_kWSpsasmN9_ncd5ifMa9Z8yABvskoQ1nSFYXxHhoC9CkQAvD_BwE"}>
                         <motion.div initial={{ backgroundSize: "105%"}} transition={{duration:.25, ease: "backOut"}} whileHover={{scale: .95, backgroundSize: "115%"}} whileTap={{scale: 0.92}} style={{backgroundImage: `url(${brad})`}}  className="projet_cont_image">
                         </motion.div>

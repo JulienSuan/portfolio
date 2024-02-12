@@ -33,3 +33,29 @@
     -webkit-text-fill-color: transparent;
     cursor: pointer;
 }
+
+@media (max-width: 976px)  {
+    .moi_para {
+        font-size: 1rem;
+    }
+}
+
+
+@media (max-width: 780px)  {
+    .moi_image {
+        height: 200px;
+    }
+   .moi_container {
+    flex-direction: column;
+   }
+   .moi_para {
+    margin-right: unset;
+
+    width: 100%;
+    padding: 2em;
+    text-align: left;
+    font-size: .95rem;
+    position: relative;
+    line-height: 140%;
+}
+}

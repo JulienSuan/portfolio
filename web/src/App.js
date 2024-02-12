@@ -265,7 +265,7 @@ function App() {
       <Stacks activeSound={activeSound} setOff={setOff} off={off} ref={refou} startTimer={startTimer} closeTimer={closeTimer} setPoints={setPoints} points={points} x={mouseXPosition} y={mouseYPosition}></Stacks>
 
     <Moi activeSound={activeSound} setOffmoi={setOffmoi} startTimer={startTimer} closeTimer={closeTimer} x={mouseXPosition} y={mouseYPosition} setCursorVariant={setCursorVariant} setCursorVariant2={setCursorVariant2}></Moi>
-    <Projets setCursorVariant={setCursorVariant} setCursorVariant2={setCursorVariant2} setomorioff={setomorioff}  counti={count}  setcount={setcount}></Projets>
+    <Projets isPhone={isPhone} setCursorVariant={setCursorVariant} setCursorVariant2={setCursorVariant2} setomorioff={setomorioff}  counti={count}  setcount={setcount}></Projets>
     <Formulaire offcontact={offcontact} setrefresh={setrefresh}  activeSound={activeSound} setoffvous={setoffvous} counti={count} setCursorVariant={setCursorVariant} setCursorVariant2={setCursorVariant2} isOpen={isOpen}  setOpen={setOpen} openedMe={openedMe} timeMoi={timeMoi} startTimer={startTimer} closeTimer={closeTimer} timeLui={timeLui} timeland={timeland} points={points}></Formulaire>
     
     <Contact setCursorVariant={setCursorVariant} setCursorVariant2={setCursorVariant2} activeSound={activeSound} refresh={refresh} setoffcontact={setoffcontact}></Contact>

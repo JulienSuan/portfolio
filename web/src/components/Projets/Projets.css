@@ -12,6 +12,7 @@
     width: 100%;
     gap: 2em;
     margin-top: 20vh;
+    padding: 2em;
 }
 
 .projet_cont_image_container {
@@ -69,3 +70,18 @@
     background-image: url("../../assets/noises/uuundulate.svg");
 
 }
+
+@media (max-width: 1090px)  {
+    .projet_cont:nth-child(2) {
+        flex-direction: column;
+    }
+    .projet_cont:nth-child(3) {
+        flex-direction: column;
+    }
+}
+@media (max-width: 776px)  {
+    .projet_cont_image {
+        width: 80vw;
+    }
+}
+
