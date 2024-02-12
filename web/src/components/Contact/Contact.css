@@ -106,3 +106,12 @@ select:-webkit-autofill:focus {
     cursor: pointer;
     /* pointer-events: none; */
 }
+
+@media (max-width: 707px)  {
+    .formuuu {
+        width: 100%;
+        padding: 2em;
+        padding-bottom: 0;
+        margin-bottom: 5rem;
+    }
+}

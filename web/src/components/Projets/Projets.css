@@ -84,4 +84,9 @@
         width: 80vw;
     }
 }
+@media (max-width: 500px)  {
+    .projet_cont_para {
+        width: auto;
+    }
+}
 

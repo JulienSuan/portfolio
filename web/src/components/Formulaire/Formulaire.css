@@ -78,3 +78,43 @@
     40% { box-shadow: 0 2.5em 0 0 }
   }
       
+  @media (max-width: 900px)  {
+    .form_container  {
+        font-size: 1rem;
+    }
+    .cont_vous > h2{
+      font-size: 1rem;
+
+    }
+    .calculez_points {
+      font-size: 1rem;
+    }
+    .CardPoints_container {
+      width: 80%!important;
+      margin: 2em!important;
+    }
+    .CardPoints_container_para {
+      font-size: 1rem!important;
+      padding: 1em!important;
+      padding-bottom: 3em!important;
+    }
+}
+  @media (max-width: 600px)  {
+    .cont_vous  {
+        font-size: 1rem;
+        width: 100%;
+        text-align: left;
+        padding: 2em;
+    }
+    .CardPoints_container_header_note {
+      font-size: 2rem!important;
+    }
+    .CardPoints_container_header_score {
+      font-size: 2rem!important;
+    }
+    
+   
+}
+
+
+  
