@@ -151,7 +151,10 @@ const [isFocused2, setisFocused2] = useState(false);
 const [isFocused3, setisFocused3] = useState(false);
 
 useEffect(() => {
-  if (activeSound) {
+  if (!activeSound) {
+    return
+  }
+  if (activeSound && isFocused ||isFocused2 || isFocused3) {
    const sound = [cursor11, cursor22];
    const index = Math.floor(Math.random() * 2 )
     sound[index].play()

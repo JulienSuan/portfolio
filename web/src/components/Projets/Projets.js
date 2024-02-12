@@ -130,7 +130,7 @@ function Projets({setcount,isPhone , counti, setomorioff, setCursorVariant, setC
                 </motion.div>
         <AnimatePresence>
                 {isHere3 &&  <motion.p  style={!isPhone  && {y: translate6}} key="modal3" layout transition={{duration: .5}} initial={{opacity: 0, y: 0}} animate={{opacity: .75, y: 0}} exit={{opacity: 0}} className='projet_cont_para moi_para'>
-Ceci est mon tout premier site, oui. <br /><br />Qu'il ne soit pas terminé, pas très beau, que la vidéo en arrière-plan se lance une fois sur dix. <br /><br />Il reste tout de même mon tout premier-né, alors malgré tous ses défauts visibles et son apparence un peu funky, il me rappelle d'où je viens.<br /><br /></motion.p>}
+Ceci est mon tout premier site, oui<br /><br />Qu'il ne soit pas terminé, pas très beau, que la vidéo en arrière-plan se lance une fois sur dix <br /><br />Il reste tout de même mon tout premier-né, alors malgré tous ses défauts visibles et son apparence un peu funky, il me rappelle d'où je viens<br /><br /></motion.p>}
         </AnimatePresence>
             </motion.div>
             <motion.div  ref={refa} className="projet_cont">
@@ -157,7 +157,7 @@ Ceci est mon tout premier site, oui. <br /><br />Qu'il ne soit pas terminé, pas
                 </motion.div>
         <AnimatePresence>
                 {isHere &&  <motion.p  key="modal" layout transition={{duration: .5}} initial={{opacity: 0, y: 100}} animate={{opacity: .75, y: 0}} exit={{opacity: 0}} className='projet_cont_para moi_para'>
-À ne pas confondre avec l'antagoniste d'une certaine série. <br /><br /> Ce site a pour but de réunir des joueurs et à organiser des tournois Overwatch en récompensant les gagnants avec des cash-prize <br /><br />J'ai réalisé mon tout premier stage parmi eux, en créant certains composants côté front-end.</motion.p>}
+À ne pas confondre avec l'antagoniste d'une certaine série <br /><br /> Ce site a pour but de réunir des joueurs et à organiser des tournois Overwatch en récompensant les gagnants avec des cash-prize <br /><br />J'ai réalisé mon tout premier stage parmi eux, en créant certains composants côté front-end</motion.p>}
         </AnimatePresence>
             </motion.div>
             <motion.div ref={refa2}  className="projet_cont">
@@ -179,7 +179,9 @@ Ceci est mon tout premier site, oui. <br /><br />Qu'il ne soit pas terminé, pas
                         <p className='ILoveOmori'>2023</p>
                 </motion.div>
         <AnimatePresence>
-                {isHere2 &&  <motion.p  key="modal2" layout transition={{duration: .5}} initial={{opacity: 0, y: 100}} animate={{opacity: .75, y: 0}} exit={{opacity: 0}} className='projet_cont_para moi_para'>"Des produits hydratants et anti-âge naturels où la durabilité et la science se rencontrent. Aux 2 actifs brevetés : le GSM10® et le ProGR3®, issus de plus de 20 ans de recherche. Science et terroir. Fabriqué en provence. Anti-âge. Résultats prouvés." <br /><br />
+                {isHere2 &&  <motion.p  key="modal2" layout transition={{duration: .5}} initial={{opacity: 0, y: 100}} animate={{opacity: .75, y: 0}} exit={{opacity: 0}} className='projet_cont_para moi_para'>
+Le domaine du skincare est, comme son nom l'indique, un site de produits de beauté co-développé par Brad Pitt<br /><br />
+J'ai eu la chance de développer certains composants côté front-end durant une alternance
                 
                 </motion.p>}
         </AnimatePresence>

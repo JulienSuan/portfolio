@@ -80,7 +80,7 @@ function Moi({x, y,setOffmoi,activeSound, setCursorVariant, setCursorVariant2, s
         </motion.p> : 
          <motion.p style={{y: translate}}  className='moi_para'>
 
-        Bonjour tout le monde, Ninja !! 😁 Oui, ce portfolio est pour vous 💜. Normalement, c'est la partie où je me présente sérieusement pour les "autres". Mais vous ! Vous êtes si différent, si unique, que vous méritez une page dédiée dans toute votre splendeur ✨<br /><br />
+        Bonjour tout le monde (TLM) Ninja ! Oui, ce portfolio est pour vous 💜. Normalement, c'est la partie où je me présente sérieusement pour les "autres". Mais vous ! Vous êtes si différent, si unique, que vous méritez une page dédiée dans toute votre splendeur ✨<br /><br />
         Oui, je suis tombé amoureux de votre agence... Tout me correspond de A à Z 😢 S'il vous plaît, faites de moi votre Genin ! Je suis un petit Breton qui a toujours rêvé d'habiter dans un pays froid... Le Canada est une destination rêvée pour mon futur ! <br /><br />
         En plus de cela, La Rochelle !! Avant de plonger dans le froid, je peux aussi me permettre d'habiter à La Rochelle ?! Mais vous savez le rêve que c'est ?? La Rochelle ! On ne parle pas de Paris ni de Marseille, mais de l'une des villes les plus belles de France à mon goût ! 😭<br /><br />
         Je pourrais écrire des heures sur les qualités de votre agence, mais ça ferait beaucoup. Alors, je continue ma parlotte avec vous plus bas 😊 ( je me suis même pas présenté ...) <br />

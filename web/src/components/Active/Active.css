@@ -62,3 +62,10 @@
 
 
 }
+
+
+@media (max-width: 678px) {
+    .active_cont {
+        width: 90%;
+    }
+}
