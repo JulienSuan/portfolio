@@ -56,7 +56,7 @@ function Moi({x, y,setOffmoi,activeSound, setCursorVariant, setCursorVariant2, s
     
 
 
-    const translate = useTransform(scrollYProgress, [0, .5,1], [-250, 0, 200])
+    const translate = useTransform(scrollYProgress, [0, .5,1], [150, 0, 0])
 
 
 
