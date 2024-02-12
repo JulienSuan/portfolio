@@ -65,7 +65,6 @@ function Moi({x, y,setOffmoi,activeSound, setCursorVariant, setCursorVariant2, s
     {alrt &&  <Alert message={"Le mail a été copié dans votre presse-papiers"}></Alert>}
      
     <motion.div  ref={refa} onViewportEnter={() => startTimer("moi")} onViewportLeave={() => closeTimer("moi")} className='moi_container'>
-        <h2 className='stacks__container_big_title' style={{position: "absolute", top: 0}}>A propos de moi</h2>
         <motion.img ref={ref} animate={moving}  className='moi_image' src={image} alt="" srcset="" />
         {!ninja ?  <motion.p style={{y: translate}}  className='moi_para'>3 années que je développe avec beaucoup de plaisir, autant sur des projets personnels que pour des particuliers. <br></br><br></br>
         Je suis en mesure de m'adapter à tous les types d'environnements de travail avec beaucoup de facilité. Étant toujours curieux dans mon domaine, j'ai pour habitudes de m'intéresser aux différentes branches du métier. <br></br><br></br> 
