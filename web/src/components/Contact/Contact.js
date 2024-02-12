@@ -8,12 +8,23 @@ import { useScroll } from 'framer-motion';
 import { useMotionValueEvent } from 'framer-motion';
 import { useParams } from 'react-router-dom';
 import imgninja from "../../assets/Mini-Ninjas-Suzume-meditating-300x300.png"
+import cursor1 from "../../assets/sfx/SYS_cursor.ogg"
+import cursor2 from "../../assets/sfx/SYS_cursor.ogg"
+import calc from "../../assets/sfx/GEN_item_get.ogg"
+
+
+
 
 const soundi = new Audio(sound)
 soundi.volume = .1
 const soundi2 = new Audio(sound2)
 soundi.volume = .05
-
+const cursor11 = new Audio(cursor1)
+cursor11.volume = .1
+const cursor22 = new Audio(cursor2)
+cursor22.volume = .05
+const calc1 = new Audio(calc)
+calc1.volume = .05
 function Contact({ setoffcontact, refresh, activeSound, setCursorVariant, setCursorVariant2 }) {
 
 
@@ -28,6 +39,8 @@ function Contact({ setoffcontact, refresh, activeSound, setCursorVariant, setCur
   const [alrt, setalrt] = useState(false);
   const email = useRef(null)
   
+
+ 
 const [states, setstates] = useState({
   nom: "",
   email: "",  
@@ -48,8 +61,11 @@ const activeAlert = () => {
   }
 }
 
+const [isLoading, setisLoading] = useState(false);
+const [isSended, setisSended] = useState(false);
 
 const handleSubmit = useCallback(async (e) => {
+
   
   e.preventDefault();
   function ValidateEmail(mail) {
@@ -58,13 +74,14 @@ const handleSubmit = useCallback(async (e) => {
     }
     return false;
   }
-
+  
   if (ValidateEmail(states.email)) {
     const json = JSON.stringify(states);
-
+    
     console.log(json);
-
+    
     try {
+      setisLoading(true)
       const response = await fetch('https://portfolio-iota-nine-53.vercel.app/email', {
         method: 'POST',
         headers: {
@@ -76,11 +93,27 @@ const handleSubmit = useCallback(async (e) => {
       console.log(response);
 
       if (response.ok) {
+        if (activeSound) {
+          calc1.play()
+        }
+        setstates({
+          para: "",
+          email: "",
+          nom: ""
+        })
+      setisSended(true)
+      setTimeout(() => {
+        setisSended(false)
+      }, 3000);
+      setisLoading(false)
+
         console.log('Email envoyé avec succès');
       } else {
+      setisLoading(false)
         console.error('Erreur lors de l\'envoi de l\'email');
       }
     } catch (error) {
+      setisLoading(false)
       console.error('Erreur lors de la requête:', error);
     }
   } else {
@@ -116,6 +149,16 @@ const translate = useTransform(scroll1.scrollYProgress, [0, .5], [-100, 0])
 const [isFocused, setisFocused] = useState(false);
 const [isFocused2, setisFocused2] = useState(false);
 const [isFocused3, setisFocused3] = useState(false);
+
+useEffect(() => {
+  if (activeSound) {
+   const sound = [cursor11, cursor22];
+   const index = Math.floor(Math.random() * 2 )
+    sound[index].play()
+    sound[index].currentTime = 0
+ }
+ 
+}, [isFocused, isFocused2, isFocused3]);
 
   useEffect(() => {
     setoffcontact(containeeer.current.offsetTop);
@@ -271,9 +314,10 @@ const [isTyping, setisTyping] = useState(false);
         setCursorVariant("default")
         setCursorVariant2("default2")
         
-      }} disabled={states.email && states.nom && states.para ? false : true} style={states.email && states.nom && states.para ? {color: "whitesmoke", borderColor: "#a78bfaf0" } : null} type="submit">Envoyez</button>
+      }} disabled={states.email && states.nom && states.para ? false : true} style={states.email && states.nom && states.para ? {color: "whitesmoke", borderColor: "#a78bfaf0" } : null} type="submit">{isLoading  ? "Chargement" : "Envoyez"}</button>
       </form>
-     
+      {isSended && <Alert message={"L'email a été envoyé ! ❤"}></Alert>}
+     {isLoading && <motion.span layout initial={{ scale: 0}} animate={{ scale: 1 }} exit={{ scale: 0, opacity: 0 }} class="loader"></motion.span>}
     </div>
   );
 }

@@ -2,10 +2,14 @@ import React, { useState } from 'react';
 import "./CardPoints.css";
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLenis } from '@studio-freight/react-lenis';
+import sound1 from "../../assets/sfx/GEN_multi1.ogg"
 
-function CardPoints({stats, setCursorVariant, setCursorVariant2, children, offcontact }) {
+
+function CardPoints({stats, setCursorVariant, activeSound, setCursorVariant2, children, offcontact }) {
   const test = useLenis()
-
+  const audio1 = new Audio(sound1)
+  audio1.volume = .05
+  
     const [chooseMessage, setChooseMessage] = useState(0);
 
     const handleScore = () => {
@@ -101,7 +105,7 @@ function CardPoints({stats, setCursorVariant, setCursorVariant2, children, offco
           className="calculez_points calculez_points22"
         >
           <motion.div>
-            <motion.p onClick={() => test.scrollTo(offcontact)} className='pimped'>Contactez-moi</motion.p>
+            <motion.p onClick={() => {test.scrollTo(offcontact); activeSound && audio1.play()}} className='pimped'>Contactez-moi</motion.p>
           </motion.div>
         </motion.p>
       </motion.div>

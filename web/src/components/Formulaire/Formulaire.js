@@ -12,7 +12,7 @@ import CardPoints from '../CardPoints/CardPoints';
 
   
   
-  const Formulaire = React.memo(({setoffvous,offcontact, setrefresh,activeSound, counti, setCursorVariant, setCursorVariant2, points, openedMe, timeMoi,startTimer, closeTimer, timeLui, timeland, isOpen, setOpen }) => {
+  const Formulaire = React.memo(({ setoffvous,offcontact, setrefresh,activeSound, counti, setCursorVariant, setCursorVariant2, points, openedMe, timeMoi,startTimer, closeTimer, timeLui, timeland, isOpen, setOpen }) => {
     
   const count = useMotionValue(0);
   const rounded = useTransform(count, Math.round);
@@ -99,7 +99,9 @@ import CardPoints from '../CardPoints/CardPoints';
     setmessage("Chargement...")
     setisload(true)
     setTimeout(() => {
-      calcu.play()
+      if (activeSound) {
+        calcu.play()
+      }
       setmessage("Calculez vos points")
       setisload(false)
       setCardloaded(true)
@@ -205,8 +207,8 @@ import CardPoints from '../CardPoints/CardPoints';
       <AnimatePresence>
         {isload && <motion.span layout initial={{ scale: 0}} animate={{ scale: 1 }} exit={{ scale: 0, opacity: 0 }} class="loader"></motion.span>}
       {cardloaded && 
-       <CardPoints offcontact={offcontact} stats={stats} setCursorVariant={setCursorVariant} setCursorVariant2={setCursorVariant2}>
-        {generateHtml(1)}
+       <CardPoints activeSound={activeSound} offcontact={offcontact} stats={stats} setCursorVariant={setCursorVariant} setCursorVariant2={setCursorVariant2}>
+        {/* {generateHtml()} */}
        </CardPoints>
       }
       </AnimatePresence>

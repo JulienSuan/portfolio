@@ -3,7 +3,7 @@
     height: 100vh;
     /* background-color: rgba(255, 0, 0, 0.178); */
     left: 0;
-    width: 150px;
+    width: 10vw;
     z-index: 9999;
 }
 .naav_container__trigger_txt {

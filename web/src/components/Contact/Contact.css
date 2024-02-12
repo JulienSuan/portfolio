@@ -1,12 +1,13 @@
 .contact_container {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 30dvh;
     position: relative;
     flex-direction: column;
+    padding-bottom: 2em;
 }
 .cont_contact_label {
     display: flex;
@@ -43,6 +44,7 @@
     border: 1px #a78bfa8f solid;
 }
 .cont_contact_label + button {
+    position: relative;
     transition: .15s;
     cursor: pointer;
     line-height: 150%;
