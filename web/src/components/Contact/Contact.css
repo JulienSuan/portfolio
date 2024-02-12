@@ -11,8 +11,8 @@
 .cont_contact_label {
     display: flex;
     position: relative;
-    justify-content: center;
-    align-items: center;
+    justify-content: start;
+    align-items: start;
     width: 100%;
 }
 .cont_contact_label > label {
@@ -44,16 +44,17 @@
 }
 .cont_contact_label + button {
     transition: .15s;
+    cursor: pointer;
     line-height: 150%;
-    padding: .5em;
-    width: 100%;
+    padding: .5em 1em;
+    width: fit-content;
     background: none;
     outline: none;
     border: none;
     border-radius: .5rem;
     background-color: rgba(0, 0, 0, 0.527);
     color: rgba(245, 245, 245, 0.432);
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-family: light;
     border: 1px #a78bfa4d solid;
 }
@@ -94,4 +95,14 @@ select:-webkit-autofill:focus {
     -webkit-text-fill-color: whitesmoke;
     -webkit-box-shadow: 0 0 0px 1000px #000 inset;
     transition: background-color 5000s ease-in-out 0s;
+}
+
+
+.ninjaimage {
+    position: absolute;
+    right: 0;
+    bottom: -10px;
+    user-select: none;
+    cursor: pointer;
+    /* pointer-events: none; */
 }

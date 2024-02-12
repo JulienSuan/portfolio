@@ -12,6 +12,7 @@ import Formulaire from './components/Formulaire/Formulaire';
 import Projets from './components/Projets/Projets';
 import Nav from './components/Nav/Nav';
 import Test from "./components/Test/Test"
+import {useParams} from "react-router-dom"
 
 import sound from "./assets/sfx/GEN_Poke.ogg"
 import sound2 from "./assets/sfx/GEN_Poke_reverse.mp3"
@@ -28,6 +29,19 @@ sfxClose.volume = .1
 
 function App() {
 
+  const [isPhone, setIsPhone] = useState(false);
+
+  useEffect(() => {
+    if (window.innerWidth < 550) {
+      setIsPhone(true)
+    } 
+  }, [isPhone, setIsPhone]);
+
+
+  const {ninja} = useParams()
+  console.log(ninja)
+
+
   const [count, setcount] = useState(0);
   const [activeSound, setactiveSound] = useState(true);
   const [heChoosed, setheChoosed] = useState(false);
@@ -35,6 +49,7 @@ function App() {
 
   const [cursorVariant, setCursorVariant] = useState("default");
   const [cursorVariant2, setCursorVariant2] = useState("default2");
+    
   const [mousePos, setmousePos] = useState({x:75, y:75});
   const ref = useRef(null)
   const refou = useRef(null)
@@ -212,7 +227,6 @@ function App() {
 
 
 
-
   return (
     <div ref={ref} onMouseLeave={(e) => {
       setmousePos({x: e.clientX, y: e.clientY})
@@ -236,26 +250,28 @@ function App() {
       </AnimatePresence>
       <Navigation activeSound={activeSound} x={mouseXPosition} y={mouseYPosition} isOpen={isOpen} setCursorVariant={setCursorVariant} setCursorVariant2={setCursorVariant2} setOpen={setOpen}></Navigation>
     {/* <LayoutGroup> */}
+      {!isPhone &&<>
       <Cursor variants={variants} cursorVariant={cursorVariant} transition={spring} ></Cursor>
       <Cursor variants={variants} cursorVariant={cursorVariant2} transition={spring} ></Cursor>
+      </> }
       <motion.div ref={refou} className="App">
         <motion.div  className="landpage"  onViewportEnter={() => startTimer("landpage")} onViewportLeave={() => closeTimer("landpage")} >
           <Dispo></Dispo>
             <h1 className='landpage_title' >Julien Bigot</h1>
             <h2 className='landpage_subtitle'>Dévellopeur Web Créatif et Soucieux des détails</h2>
             <h3 className='landpage_subtitle_2' >Je conçois des sites sur mesure pour répondre à tous vos besoins.</h3>
-          <Noises x={mouseXPosition} y={mouseYPosition}></Noises>
+          {!isPhone && <Noises x={mouseXPosition} y={mouseYPosition}></Noises>}
         </motion.div>
       <Stacks activeSound={activeSound} setOff={setOff} off={off} ref={refou} startTimer={startTimer} closeTimer={closeTimer} setPoints={setPoints} points={points} x={mouseXPosition} y={mouseYPosition}></Stacks>
 
     <Moi activeSound={activeSound} setOffmoi={setOffmoi} startTimer={startTimer} closeTimer={closeTimer} x={mouseXPosition} y={mouseYPosition} setCursorVariant={setCursorVariant} setCursorVariant2={setCursorVariant2}></Moi>
     <Projets setCursorVariant={setCursorVariant} setCursorVariant2={setCursorVariant2} setomorioff={setomorioff}  counti={count}  setcount={setcount}></Projets>
-    <Formulaire setrefresh={setrefresh}  activeSound={activeSound} setoffvous={setoffvous} counti={count} setCursorVariant={setCursorVariant} setCursorVariant2={setCursorVariant2} isOpen={isOpen}  setOpen={setOpen} openedMe={openedMe} timeMoi={timeMoi} startTimer={startTimer} closeTimer={closeTimer} timeLui={timeLui} timeland={timeland} points={points}></Formulaire>
+    <Formulaire offcontact={offcontact} setrefresh={setrefresh}  activeSound={activeSound} setoffvous={setoffvous} counti={count} setCursorVariant={setCursorVariant} setCursorVariant2={setCursorVariant2} isOpen={isOpen}  setOpen={setOpen} openedMe={openedMe} timeMoi={timeMoi} startTimer={startTimer} closeTimer={closeTimer} timeLui={timeLui} timeland={timeland} points={points}></Formulaire>
     
     <Contact setCursorVariant={setCursorVariant} setCursorVariant2={setCursorVariant2} activeSound={activeSound} refresh={refresh} setoffcontact={setoffcontact}></Contact>
       </motion.div>
     {/* </LayoutGroup> */}
-    <Test></Test>
+    {!isPhone && <Test></Test>}
     <p className="GoodForHealthBadForImagination">
      Portfolio fait avec 💜 par moi même
     </p>

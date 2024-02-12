@@ -10,8 +10,10 @@ import CardPoints from '../CardPoints/CardPoints';
   const calcu = new Audio(calc)
   calcu.volume = .1
 
-const Formulaire = React.memo(({setoffvous, setrefresh,activeSound, counti, setCursorVariant, setCursorVariant2, points, openedMe, timeMoi,startTimer, closeTimer, timeLui, timeland, isOpen, setOpen }) => {
-
+  
+  
+  const Formulaire = React.memo(({setoffvous,offcontact, setrefresh,activeSound, counti, setCursorVariant, setCursorVariant2, points, openedMe, timeMoi,startTimer, closeTimer, timeLui, timeland, isOpen, setOpen }) => {
+    
   const count = useMotionValue(0);
   const rounded = useTransform(count, Math.round);
   const count2 = useMotionValue(0);
@@ -30,6 +32,7 @@ const Formulaire = React.memo(({setoffvous, setrefresh,activeSound, counti, setC
   const [stats, setstats] = useState(0);
 
   const heClicked = () => {
+    
     let sommePoints = 0;
     console.log(counti)
 
@@ -202,7 +205,7 @@ const Formulaire = React.memo(({setoffvous, setrefresh,activeSound, counti, setC
       <AnimatePresence>
         {isload && <motion.span layout initial={{ scale: 0}} animate={{ scale: 1 }} exit={{ scale: 0, opacity: 0 }} class="loader"></motion.span>}
       {cardloaded && 
-       <CardPoints stats={stats} setCursorVariant={setCursorVariant} setCursorVariant2={setCursorVariant2}>
+       <CardPoints offcontact={offcontact} stats={stats} setCursorVariant={setCursorVariant} setCursorVariant2={setCursorVariant2}>
         {generateHtml(1)}
        </CardPoints>
       }

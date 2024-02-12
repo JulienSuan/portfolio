@@ -6,12 +6,14 @@ import allforone from "../../assets/projets/allforone.png"
 import moon from "../../assets/projets/moonLighter.png"
 import { useScroll } from 'framer-motion';
 import sound from "../../assets/sfx/GEN_Poke_reverse.mp3"
+import { Link } from 'react-router-dom';
+
 const sfxOpen = new Audio(sound)
 sfxOpen.volume = .1
-
 export default function Projets({setcount, counti, setomorioff, setCursorVariant, setCursorVariant2}) {
 
 
+       
         const refomori = useRef(null)
 
         useEffect(() => {
@@ -119,8 +121,10 @@ export default function Projets({setcount, counti, setomorioff, setCursorVariant
         setCursorVariant2("default2")
         
       }}   style={{y: translate4}} onClick={() => setisvisited(true)}   layout className="projet_cont_image_container">
+       <Link to={"https://juliensuan.github.io/Moonlighter/"} target='blank'>
                         <motion.div initial={{ backgroundSize: "105%"}} transition={{duration:.25, ease: "backOut"}} whileHover={{scale: .95, backgroundSize: "115%"}} whileTap={{scale: 0.92}}style={{backgroundImage: `url(${moon})`}} className="projet_cont_image">
                         </motion.div>
+       </Link>
                         <motion.p style={{y: translate5}} className='ILoveOmori'>Là où tout à commencé</motion.p>
                         <motion.p style={{y: translate5}} className='ILoveOmori'>2021</motion.p>
                 </motion.div>
@@ -140,8 +144,13 @@ Ceci est mon tout premier site, oui. <br /><br />Qu'il ne soit pas terminé, pas
         setCursorVariant2("default2")
         
       }}  style={{y: translate2}} onClick={() => setisvisited2(true)}  layout className="projet_cont_image_container">
+       <Link to={"https://www.playallforone.com/"} target='blank'>
+
                         <motion.div  initial={{ backgroundSize: "105%"}} transition={{duration:.25, ease: "backOut"}} whileHover={{scale: .95, backgroundSize: "115%"}} whileTap={{scale: 0.92}} style={{backgroundImage: `url(${allforone})`}} className="projet_cont_image">
                         </motion.div>
+
+       </Link>
+
                         <motion.p style={{x: translate}} className='ILoveOmori'>Overwatch All For One</motion.p>
                         <motion.p style={{x: translate}} className='ILoveOmori'>2022</motion.p>
 
@@ -162,13 +171,17 @@ Ceci est mon tout premier site, oui. <br /><br />Qu'il ne soit pas terminé, pas
         setCursorVariant2("default2")
         
       }} style={{y: translate3}} onClick={() => setisvisited3(true)}  layout  className="projet_cont_image_container">
+          <Link target='blank' to={"https://le-domaine.com/?gad_source=1&gclid=CjwKCAiA_aGuBhACEiwAly57MUkL2UzZdunkT1_kWSpsasmN9_ncd5ifMa9Z8yABvskoQ1nSFYXxHhoC9CkQAvD_BwE"}>
                         <motion.div initial={{ backgroundSize: "105%"}} transition={{duration:.25, ease: "backOut"}} whileHover={{scale: .95, backgroundSize: "115%"}} whileTap={{scale: 0.92}} style={{backgroundImage: `url(${brad})`}}  className="projet_cont_image">
                         </motion.div>
+         </Link>
                         <p className='ILoveOmori'>Le Domaine Skincare</p>
                         <p className='ILoveOmori'>2023</p>
                 </motion.div>
         <AnimatePresence>
-                {isHere2 &&  <motion.p  key="modal2" layout transition={{duration: .5}} initial={{opacity: 0, y: 100}} animate={{opacity: .75, y: 0}} exit={{opacity: 0}} className='projet_cont_para moi_para'>"Des produits hydratants et anti-âge naturels où la durabilité et la science se rencontrent. Aux 2 actifs brevetés : le GSM10® et le ProGR3®, issus de plus de 20 ans de recherche. Science et terroir. Fabriqué en provence. Anti-âge. Résultats prouvés." <br /><br />Oui, ce n'est pas moi qu'à décidé cela. Je suis très loin d'approuvé avec mais un client reste un client </motion.p>}
+                {isHere2 &&  <motion.p  key="modal2" layout transition={{duration: .5}} initial={{opacity: 0, y: 100}} animate={{opacity: .75, y: 0}} exit={{opacity: 0}} className='projet_cont_para moi_para'>"Des produits hydratants et anti-âge naturels où la durabilité et la science se rencontrent. Aux 2 actifs brevetés : le GSM10® et le ProGR3®, issus de plus de 20 ans de recherche. Science et terroir. Fabriqué en provence. Anti-âge. Résultats prouvés." <br /><br />
+                
+                </motion.p>}
         </AnimatePresence>
             </motion.div>
            

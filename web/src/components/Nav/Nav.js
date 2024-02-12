@@ -98,7 +98,7 @@ export default function Nav({off,offvous,refresh, offcontact, offmoi, setCursorV
         setisHover(false)
       }} onMouseOver={() => setisOpen(true)} whileTap={{scale: .85}}  whileHover={{scale: .95}}initial={{x: "-30%", opacity: .2, y: '-50%'}} exit={{opacity: 0,  y: '-50%', x: "-30%"}} animate={{x: "0%", opacity: 1,  y: '-50%'}} className='naav_container_bar__label'  onClick={() =>{ test &&  test.scrollTo(0);  if (activeSound) {
         const random = Math.floor(Math.random()*3); soundTab[random].play(); soundTab[random].currentTime = 0
-      } else return }}  ><span className='pimped'>First Page</span></motion.p>
+      } else return }}  ><span className='pimped'>Devanture</span></motion.p>
                     <motion.p onMouseDown={() => {setCursorVariant("tap") ; setCursorVariant2("tap")}} 
                     onMouseUp={() => {setCursorVariant("hover") ; setCursorVariant2("hover")}} onMouseEnter={() => {
         setCursorVariant("hover")
@@ -110,7 +110,7 @@ export default function Nav({off,offvous,refresh, offcontact, offmoi, setCursorV
         setisHover(false)
       }} onMouseOver={() => setisOpen(true)} whileTap={{scale: .85}} whileHover={{scale: .95}}initial={{x: "-30%", opacity: .2, y: '-50%'}} exit={{opacity: 0,  y: '-50%', x: "-30%"}} animate={{x: "0%", opacity: 1,  y: '-50%'}} className='naav_container_bar__label' onClick={() => {test &&  test.scrollTo((off + window.innerHeight));   if (activeSound) {
         const random = Math.floor(Math.random()*3); soundTab[random].play(); soundTab[random].currentTime = 0
-      } else return }}  style={{top: pourcExp + "%"}}><span className='pimped'>Skills</span></motion.p>
+      } else return }}  style={{top: pourcExp + "%"}}><span className='pimped'>Compétences</span></motion.p>
                     <motion.p onMouseDown={() => {setCursorVariant("tap") ; setCursorVariant2("tap")}} 
                     onMouseUp={() => {setCursorVariant("hover") ; setCursorVariant2("hover")}} onMouseEnter={() => {
         setCursorVariant("hover")
@@ -122,7 +122,7 @@ export default function Nav({off,offvous,refresh, offcontact, offmoi, setCursorV
         setisHover(false)
       }} onMouseOver={() => setisOpen(true)} whileTap={{scale: .85}} whileHover={{scale: .95}}initial={{x: "-30%", opacity: .2, y: '-50%'}} exit={{opacity: 0,  y: '-50%', x: "-30%"}} animate={{x: "0%", opacity: 1,  y: '-50%'}} className='naav_container_bar__label'  onClick={() => {test && test.scrollTo((offmoi.top));   if (activeSound) {
         const random = Math.floor(Math.random()*3); soundTab[random].play(); soundTab[random].currentTime = 0
-      } else return }} style={{top: pourcMoi + "%"}}><span className='pimped'>About me</span></motion.p>
+      } else return }} style={{top: pourcMoi + "%"}}><span className='pimped'>Ma pomme</span></motion.p>
                     <motion.p onMouseDown={() => {setCursorVariant("tap") ; setCursorVariant2("tap")}} 
                     onMouseUp={() => {setCursorVariant("hover") ; setCursorVariant2("hover")}} onMouseEnter={() => {
         setCursorVariant("hover")
@@ -134,7 +134,7 @@ export default function Nav({off,offvous,refresh, offcontact, offmoi, setCursorV
         setisHover(false)
       }} onMouseOver={() => setisOpen(true)} whileTap={{scale: .85}} whileHover={{scale: .95}}initial={{x: "-30%", opacity: .2, y: '-50%'}} exit={{opacity: 0,  y: '-50%', x: "-30%"}} animate={{x: "0%", opacity: 1,  y: '-50%'}} className='naav_container_bar__label' onClick={() =>{ test && test.scrollTo(omorioff);   if (activeSound) {
         const random = Math.floor(Math.random()*3); soundTab[random].play(); soundTab[random].currentTime = 0
-      } else return }} style={{top: pourcProj + "%"}} ><span className='pimped'>Projects</span></motion.p>
+      } else return }} style={{top: pourcProj + "%"}} ><span className='pimped'>Projets</span></motion.p>
                     <motion.p onMouseDown={() => {setCursorVariant("tap") ; setCursorVariant2("tap")}} 
                     onMouseUp={() => {setCursorVariant("hover") ; setCursorVariant2("hover")}} onMouseEnter={() => {
         setCursorVariant("hover")
@@ -146,7 +146,7 @@ export default function Nav({off,offvous,refresh, offcontact, offmoi, setCursorV
         setisHover(false)
       }} onMouseOver={() => setisOpen(true)} whileTap={{scale: .85}} whileHover={{scale: .95}}initial={{x: "-30%", opacity: .2, y: '-50%'}} exit={{opacity: 0,  y: '-50%', x: "-30%"}} animate={{x: "0%", opacity: 1,  y: '-50%'}} className='naav_container_bar__label' onClick={() => {test && test.scrollTo(offvous);   if (activeSound) {
         const random = Math.floor(Math.random()*3); soundTab[random].play(); soundTab[random].currentTime = 0
-      } else return }} style={{top: pourcVous + "%"}}><span className='pimped'>About You</span></motion.p>
+      } else return }} style={{top: pourcVous + "%"}}><span className='pimped'>Et vous ?</span></motion.p>
                     <motion.p onMouseDown={() => {setCursorVariant("tap") ; setCursorVariant2("tap")}} 
                     onMouseUp={() => {setCursorVariant("hover") ; setCursorVariant2("hover")}} onMouseEnter={() => {
         setCursorVariant("hover")

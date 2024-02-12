@@ -38,8 +38,10 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
 
 
   return (
-    isHere && 
-    <>
+    <AnimatePresence>
+    {isHere && 
+    <motion.div initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }} exit={{opacity: 0}} >
       <motion.div    layout animate={!isOpen ? "open" : "closed"}
       variants={variants} transition={{duration: .15 }}  onMouseDown={() => {setCursorVariant("tap") ; setCursorVariant2("tap")}} 
       onMouseUp={() => {setCursorVariant("hover") ; setCursorVariant2("hover")}} onMouseEnter={() => {
@@ -49,7 +51,6 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
         setCursorVariant("default")
         setCursorVariant2("default2")
       }} onClick={() => setOpen(!isOpen)} ref={ref} className="nav_container">
-         <AnimatePresence>
 
         {!isOpen && 
           <motion.div   initial={{ opacity: 0 }}
@@ -62,9 +63,9 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
             </div>
           </motion.div>
         }
-        </AnimatePresence>
       </motion.div>
 
-    </>
+    </motion.div>}
+        </AnimatePresence>
   )
 }

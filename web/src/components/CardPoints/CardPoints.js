@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import "./CardPoints.css";
 import { motion, AnimatePresence } from 'framer-motion';
+import { useLenis } from '@studio-freight/react-lenis';
 
-export default function CardPoints({stats, setCursorVariant, setCursorVariant2, children }) {
+export default function CardPoints({stats, setCursorVariant, setCursorVariant2, children, offcontact }) {
+  const test = useLenis()
 
     const [chooseMessage, setChooseMessage] = useState(0);
 
@@ -42,13 +44,13 @@ export default function CardPoints({stats, setCursorVariant, setCursorVariant2, 
       if (stats >= 450) {
         return (
           
-  <p>Au-dessus de 450 points ?! Je suis vraiment impressionné. Si tu avais fait plus, je t'aurais soupçonné de triche, mais tu as l'air plutôt d'être très curieux 🙃 Avec un score pareil, je suis certain que nous pouvons très bien nous entendre. Alors viens me contacter au plus vite maintenant ! 😁</p>
+  <p>Au-dessus de 450 points ?! Je suis vraiment impressionné. Si tu avais fait plus, je t'aurais soupçonné de triche, mais tu as l'air plutôt d'être très curieux 😊 Avec un score pareil, je suis certain que nous pouvons très bien nous entendre. Alors viens me contacter au plus vite maintenant ! 😁</p>
         )
       }
       if (stats >= 400) {
         return (
           
-          <p>Au-dessus de 400 points ?! Hé, pas mal du tout ! Tu n'as pas triché hein ? 😄 Sérieusement, ton score est génial ! Avec un cerveau aussi vif, on peut vraiment avoir des conversations intéressantes. Ne sois pas timide, contacte-moi dès maintenant ! 🚀</p>
+          <p>Au-dessus de 400 points ?! Hé, pas mal du tout ! Tu n'as pas triché hein ? 😄 Sérieusement, ton score me plaît beaucoup ! Avec un intérêt aussi grand pour mon portfolio on devrait échanger ensemble. Alors ne sois pas timide, contacte-moi dès maintenant ! 🚀</p>
         )
       }
       if (stats >= 300) {
@@ -99,7 +101,7 @@ export default function CardPoints({stats, setCursorVariant, setCursorVariant2, 
           className="calculez_points calculez_points22"
         >
           <motion.div>
-            <motion.p className='pimped'>Contactez-moi</motion.p>
+            <motion.p onClick={() => test.scrollTo(offcontact)} className='pimped'>Contactez-moi</motion.p>
           </motion.div>
         </motion.p>
       </motion.div>

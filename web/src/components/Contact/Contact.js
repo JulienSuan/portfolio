@@ -6,6 +6,8 @@ import sound2 from "../../assets/sfx/SE_lightbulb.ogg"
 import { motion, useTransform } from 'framer-motion';
 import { useScroll } from 'framer-motion';
 import { useMotionValueEvent } from 'framer-motion';
+import { useParams } from 'react-router-dom';
+import imgninja from "../../assets/Mini-Ninjas-Suzume-meditating-300x300.png"
 
 const soundi = new Audio(sound)
 soundi.volume = .1
@@ -15,6 +17,10 @@ soundi.volume = .05
 function Contact({ setoffcontact, refresh, activeSound, setCursorVariant, setCursorVariant2 }) {
 
 
+
+  
+  
+  const {ninja} = useParams()
 
 
   const containeeer = useRef(null);
@@ -93,9 +99,10 @@ const handleSubmit = useCallback(async (e) => {
       clearTimeout(time)
     }
   }
-}, [states, isAlert, activeSound]);
+}, [isAlert, activeSound, states.email, states.nom, states.para]);
 
 const [isHere, setisHere] = useState(false);
+
 
 
 const scroll1 = useScroll({
@@ -122,6 +129,30 @@ const [isFocused3, setisFocused3] = useState(false);
     }
   })
 
+
+
+const [isTyping, setisTyping] = useState(false);
+
+
+  const handleDialogue = () => {
+    setisFocused3(true)
+    let index = 0;
+    const message = "Bonjour Julien ! Bien sûr ! Nous serions ravis que tu puisses nous rejoindre ! Un ninja aussi motivé que toi mérite une belle place au chaud parmi nous ❤ Nous avons hâte de pouvoir faire ample connaissance avec toi. Pas la peine de te faire passer des tests, on te prend direct ! 😇";
+    const messageLength = message.length;
+    const interval = setInterval(() => {
+      if (index < messageLength) {
+        setstates(prev => ({...prev, para: message.substring(0, index + 1)}));
+        index++;
+      } else {
+      setisTyping(false)
+        clearInterval(interval);
+      }
+    }, 25);
+    if (isTyping) {
+      clearInterval(interval);
+    }
+    setisTyping(true)
+  };
   return (
     <div ref={containeeer} className='contact_container'>
       <motion.h2 initial={{y: 0}}  style={{ y:translate, marginBottom: "0"}} className='stacks__container_big_title'>Contact</motion.h2>
@@ -139,7 +170,16 @@ const [isFocused3, setisFocused3] = useState(false);
           <div className="cont_contact_label">
           
             <motion.label layout style={isFocused && {top: "-25%", left: "1em", fontSize:".75rem", backgroundColor: "black", border : "1px #a78bfa8f solid"}} htmlFor="name">Nom</motion.label>
-            <input
+            <input onMouseDown={() => {setCursorVariant("tap") ; setCursorVariant2("tap")}} 
+                    onMouseUp={() => {setCursorVariant("hover") ; setCursorVariant2("hover")}} onMouseEnter={() => {
+        setCursorVariant("hover")
+        setCursorVariant2("hover")
+       
+      }} onMouseLeave={() => {
+        setCursorVariant("default")
+        setCursorVariant2("default2")
+        
+      }}
             onFocus={() => setisFocused(true)}
             onBlur={() => {
               if (!states.nom) {
@@ -156,7 +196,16 @@ const [isFocused3, setisFocused3] = useState(false);
 
         <div className="cont_contact_label"> 
           <motion.label layout style={isFocused2 && {top: "-25%", left: "1em", fontSize:".75rem", backgroundColor: "black", border : "1px #a78bfa8f solid"}}  htmlFor="email">Email</motion.label>
-          <input ref={email} 
+          <input onMouseDown={() => {setCursorVariant("tap") ; setCursorVariant2("tap")}} 
+                    onMouseUp={() => {setCursorVariant("hover") ; setCursorVariant2("hover")}} onMouseEnter={() => {
+        setCursorVariant("hover")
+        setCursorVariant2("hover")
+       
+      }} onMouseLeave={() => {
+        setCursorVariant("default")
+        setCursorVariant2("default2")
+        
+      }} ref={email} 
           onFocus={() => setisFocused2(true)}
           onBlur={() => {
             if (!states.email) {
@@ -172,8 +221,29 @@ const [isFocused3, setisFocused3] = useState(false);
         </div>
 
         <div className="cont_contact_label">
+{ninja && <img onMouseDown={() => {setCursorVariant("tap") ; setCursorVariant2("tap")}} 
+                    onMouseUp={() => {setCursorVariant("hover") ; setCursorVariant2("hover")}} onMouseEnter={() => {
+        setCursorVariant("hover")
+        setCursorVariant2("hover")
+       
+      }} onMouseLeave={() => {
+        setCursorVariant("default")
+        setCursorVariant2("default2")
+        
+      }} onClick={handleDialogue} className='ninjaimage' width={90} src={imgninja} alt="" srcset="" />
+    }
+
           <motion.label layout style={isFocused3 && {top: "-5%", left: "1em", fontSize:".75rem", backgroundColor: "black", border : "1px #a78bfa8f solid"}} htmlFor="message">Message</motion.label>
-          <textarea
+          <textarea onMouseDown={() => {setCursorVariant("tap") ; setCursorVariant2("tap")}} 
+                    onMouseUp={() => {setCursorVariant("hover") ; setCursorVariant2("hover")}} onMouseEnter={() => {
+        setCursorVariant("hover")
+        setCursorVariant2("hover")
+       
+      }} onMouseLeave={() => {
+        setCursorVariant("default")
+        setCursorVariant2("default2")
+        
+      }}
           onFocus={() => setisFocused3(true)}
           onBlur={() => {
             if (!states.para) {
@@ -186,12 +256,24 @@ const [isFocused3, setisFocused3] = useState(false);
             id="message"
             cols="30"
             rows="10"
-          ></textarea>
+          >
+
+          </textarea>
         </div>
 
 
-        <button disabled={states.email && states.nom && states.para ? false : true} style={states.email && states.nom && states.para ? {color: "whitesmoke", borderColor: "#a78bfaf0" } : null} type="submit">Envoyez</button>
+        <button onMouseDown={() => {setCursorVariant("tap") ; setCursorVariant2("tap")}} 
+                    onMouseUp={() => {setCursorVariant("hover") ; setCursorVariant2("hover")}} onMouseEnter={() => {
+        setCursorVariant("hover")
+        setCursorVariant2("hover")
+       
+      }} onMouseLeave={() => {
+        setCursorVariant("default")
+        setCursorVariant2("default2")
+        
+      }} disabled={states.email && states.nom && states.para ? false : true} style={states.email && states.nom && states.para ? {color: "whitesmoke", borderColor: "#a78bfaf0" } : null} type="submit">Envoyez</button>
       </form>
+     
     </div>
   );
 }
