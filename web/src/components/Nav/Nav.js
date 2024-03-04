@@ -34,7 +34,6 @@ function Nav({off,offvous,refresh, offcontact, offmoi, setCursorVariant, setCurs
     useEffect(() => {
         if (off && offmoi && omorioff) {
             const max = document.body.clientHeight - window.innerHeight
-            console.log(max)
             const pourcentage = ((off + window.innerHeight) / max ) * 100
             const pourcentageproj =  (((omorioff )) / max)  * 100
             const pourcentagemoi = (((offmoi.top )) / max)  * 100
@@ -45,10 +44,6 @@ function Nav({off,offvous,refresh, offcontact, offmoi, setCursorVariant, setCurs
             setpourcExp(pourcentage.toFixed(2))
             setpourcMoi(pourcentagemoi.toFixed(2))
             setpourcVous(pourcentagevous.toFixed(2))
-            console.log(pourcentage)
-            console.log(pourcentageproj)
-            console.log(pourcentagemoi)
-            console.log(pourcentagemoi)
         }
     }, [off, offmoi, offcontact,refresh]);
 
@@ -64,7 +59,6 @@ function Nav({off,offvous,refresh, offcontact, offmoi, setCursorVariant, setCurs
 
     const progress = useTransform(scrollYProgress, [0,1], ["0%", "100%"])
     useMotionValueEvent(scrollY, "change", (latest) => {
-        console.log(latest)
     })
 
     useMotionValueEvent(scrollYProgress, "change", (latest) => {
@@ -73,7 +67,6 @@ function Nav({off,offvous,refresh, offcontact, offmoi, setCursorVariant, setCurs
         } else if (!isHover && latest > .1) {
             setisOpen(false)
         }
-        console.log("x changed to", latest)
         setprog(Math.round(latest.toFixed(2) * 100))
       })
    

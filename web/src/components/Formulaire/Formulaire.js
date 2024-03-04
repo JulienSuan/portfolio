@@ -34,9 +34,7 @@ import CardPoints from '../CardPoints/CardPoints';
   const heClicked = () => {
     
     let sommePoints = 0;
-    console.log(counti)
 
-    console.log(points);
     
     if (points > 200) {
       sommePoints += 83.4;

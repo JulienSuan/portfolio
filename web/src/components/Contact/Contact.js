@@ -78,7 +78,6 @@ const handleSubmit = useCallback(async (e) => {
   if (ValidateEmail(states.email)) {
     const json = JSON.stringify(states);
     
-    console.log(json);
     
     try {
       setisLoading(true)
@@ -90,7 +89,6 @@ const handleSubmit = useCallback(async (e) => {
         body: json,
       });
 
-      console.log(response);
 
       if (response.ok) {
         if (activeSound) {
@@ -107,7 +105,6 @@ const handleSubmit = useCallback(async (e) => {
       }, 3000);
       setisLoading(false)
 
-        console.log('Email envoyé avec succès');
       } else {
       setisLoading(false)
         console.error('Erreur lors de l\'envoi de l\'email');

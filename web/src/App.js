@@ -1,25 +1,24 @@
-import {  useEffect, useRef, useState } from 'react';
+import useMouse from '@react-hook/mouse-position';
+import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useRef, useState } from 'react';
+import { useParams } from "react-router-dom";
 import './App.css';
-import Navigation from './components/Navigation/Navigation';
-import {motion, LayoutGroup, AnimatePresence } from "framer-motion"
-import Noises from './components/Noises/Noises';
-import Dispo from './components/Dispo/Dispo';
-import Stacks from './components/Stacks/Stacks';
-import useMouse from '@react-hook/mouse-position'
 import Cursor from './components/Cursor/Cursor';
-import Moi from './components/Moi/Moi';
+import Dispo from './components/Dispo/Dispo';
 import Formulaire from './components/Formulaire/Formulaire';
-import Projets from './components/Projets/Projets';
+import Moi from './components/Moi/Moi';
 import Nav from './components/Nav/Nav';
-import Test from "./components/Test/Test"
-import {useParams} from "react-router-dom"
+import Navigation from './components/Navigation/Navigation';
+import Noises from './components/Noises/Noises';
+import Projets from './components/Projets/Projets';
+import Stacks from './components/Stacks/Stacks';
+import Test from "./components/Test/Test";
 
-import sound from "./assets/sfx/GEN_Poke.ogg"
-import sound2 from "./assets/sfx/GEN_Poke_reverse.mp3"
+import sound from "./assets/sfx/GEN_Poke.ogg";
+import sound2 from "./assets/sfx/GEN_Poke_reverse.mp3";
 import Active from './components/Active/Active';
-import Sfx from './components/Sfx/Sfx';
 import Contact from './components/Contact/Contact';
-import Alert from './components/Alert/Alert';
+import Sfx from './components/Sfx/Sfx';
 const sfxOpen = new Audio(sound)
 sfxOpen.volume = .1
 const sfxClose = new Audio(sound2)
@@ -39,7 +38,6 @@ function App() {
 
 
   const {ninja} = useParams()
-  console.log(ninja)
 
 
   const [count, setcount] = useState(0);

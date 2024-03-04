@@ -25,7 +25,6 @@ function Moi({x, y,setOffmoi,activeSound, setCursorVariant, setCursorVariant2, s
     const ref = useRef(null)
 
     useEffect(() => {
-      console.dir(refa)
       setOffmoi({top: refa.current.offsetTop, margin: window.getComputedStyle(refa.current).marginTop})
     }, []);
     

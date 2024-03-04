@@ -47,10 +47,8 @@ const Stacks = forwardRef(function Stacks({x,y,activeSound, setOff, setPoints, s
     };
 
     if (activeSound) {
-      console.log("active");
       addEventListeners();
     } else {
-      console.log("removed");
       removeEventListeners();
     }
 
@@ -81,7 +79,6 @@ const Stacks = forwardRef(function Stacks({x,y,activeSound, setOff, setPoints, s
     const elements = document.querySelectorAll(".stacks__container_grid_stack")
     elements.forEach(element => {
       element.addEventListener("mouseenter", (e) => {
-        console.dir(e)
         const bulle = document.createElement("div")
         bulle.className = "bulle"
         bulle.style.left = e.offsetX + "px"
@@ -105,7 +102,6 @@ const Stacks = forwardRef(function Stacks({x,y,activeSound, setOff, setPoints, s
       elements.forEach(element => {
         element.removeEventListener("mouseenter", () => (e) => {
           setPoints(prev => prev + 1)
-          console.dir(e)
           const bulle = document.createElement("div")
           bulle.className = "bulle"
           bulle.style.left = e.offsetX + "px"
